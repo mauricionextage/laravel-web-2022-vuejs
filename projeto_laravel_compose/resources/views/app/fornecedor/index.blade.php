@@ -72,7 +72,7 @@ $i = 0;
 @endwhile --}}
 
 
-@foreach ($fornecedor as $indice)
+@forelse ($fornecedor as $indice)
     Fornecedor = {{ $indice['nome'] }}
     <br>
     Status = {{ $indice['status'] }}
@@ -81,7 +81,11 @@ $i = 0;
     <br>
     Telefone {{ $indice['telefone'] ?? 'Dado nao preenchido ' }}
     <br>
-@endforeach
+@empty
+    Não existe
+
+
+@endforelse
 
 {{-- @switch ($fornecedor[0]['ddd'])
     @case('41')
