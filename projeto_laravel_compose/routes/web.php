@@ -29,8 +29,6 @@ Route::get('/login', function () {
 //APP
 Route::prefix('/app')->group(function () {
 
-
-
     Route::get('/clientes', function () {
         return 'client';
     })->name('app.clientes');
@@ -42,3 +40,7 @@ Route::prefix('/app')->group(function () {
         return 'produtos';
     })->name('app.produtos');
 });
+
+Route::get('/rota2', function () {
+    return redirect()->route('site.index');
+})->name('site.rota2');
