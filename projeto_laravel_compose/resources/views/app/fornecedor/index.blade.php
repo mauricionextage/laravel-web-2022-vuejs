@@ -41,7 +41,7 @@
 
 
 
-@for ($i = 0; isset($fornecedor[$i]); $i++)
+{{-- @for ($i = 0; isset($fornecedor[$i]); $i++)
     <br>
     Fornecedor = {{ $fornecedor[$i]['nome'] }}
     <br>
@@ -52,7 +52,26 @@
     Telefone {{ $fornecedor[$i]['telefone'] ?? 'Dado nao preenchido ' }}
     <br>
 
-@endfor
+@endfor --}}
+@php
+$i = 0;
+@endphp
+@while (isset($fornecedor[$i]))
+    <br>
+    Fornecedor = {{ $fornecedor[$i]['nome'] }}
+    <br>
+    Status = {{ $fornecedor[$i]['status'] }}
+    <br>
+    CNPJ {{ $fornecedor[$i]['cnpj'] ?? 'Dado nao preenchido ' }}
+    <br>
+    Telefone {{ $fornecedor[$i]['telefone'] ?? 'Dado nao preenchido ' }}
+    <br>
+    @php
+        $i++;
+    @endphp
+@endwhile
+
+
 
 
 {{-- @switch ($fornecedor[0]['ddd'])
