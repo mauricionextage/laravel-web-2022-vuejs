@@ -39,17 +39,23 @@
 
     @endisset --}}
 
-<br>
-Fornecedor = {{ $fornecedor[1]['nome'] }}
-<br>
-Status = {{ $fornecedor[1]['status'] }}
-<br>
-CNPJ {{ $fornecedor[1]['cnpj'] ?? 'Dado nao preenchido ' }}
-<br>
-Telefone {{ $fornecedor[1]['telefone'] ?? 'Dado nao preenchido ' }}
-<br>
 
-@switch ($fornecedor[0]['ddd'])
+
+@for ($i = 0; isset($fornecedor[$i]); $i++)
+    <br>
+    Fornecedor = {{ $fornecedor[$i]['nome'] }}
+    <br>
+    Status = {{ $fornecedor[$i]['status'] }}
+    <br>
+    CNPJ {{ $fornecedor[$i]['cnpj'] ?? 'Dado nao preenchido ' }}
+    <br>
+    Telefone {{ $fornecedor[$i]['telefone'] ?? 'Dado nao preenchido ' }}
+    <br>
+
+@endfor
+
+
+{{-- @switch ($fornecedor[0]['ddd'])
     @case('41')
         paraná
     @break
@@ -59,7 +65,7 @@ Telefone {{ $fornecedor[1]['telefone'] ?? 'Dado nao preenchido ' }}
     @case('42')
         Londrina
     @break
-@endswitch
+@endswitch --}}
 {{-- -- VARIAVEL VAZIA --}}
 {{-- @empty($fornecedor[1]['cnpj'])
     vazia
