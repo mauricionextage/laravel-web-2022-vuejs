@@ -41,9 +41,13 @@ Route::prefix('/app')->group(function () {
     })->name('app.produtos');
 });
 
-Route::get('/rota2', function () {
-    return redirect()->route('site.index');
-})->name('site.rota2');
+
+// Route::get('/rota2', function () {
+//     return redirect()->route('site.index');
+// })->name('site.rota2');
+
+
+Route::get('/teste/{p1}/{p2}', 'TesteController@teste')->name('teste');
 
 //ROTA FALLBACK ROTA NAO EXISTENTE
 
