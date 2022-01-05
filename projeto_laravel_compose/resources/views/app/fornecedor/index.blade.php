@@ -53,7 +53,7 @@
     <br>
 
 @endfor --}}
-@php
+{{-- @php
 $i = 0;
 @endphp
 @while (isset($fornecedor[$i]))
@@ -69,10 +69,19 @@ $i = 0;
     @php
         $i++;
     @endphp
-@endwhile
+@endwhile --}}
 
 
-
+@foreach ($fornecedor as $indice)
+    Fornecedor = {{ $indice['nome'] }}
+    <br>
+    Status = {{ $indice['status'] }}
+    <br>
+    CNPJ {{ $indice['cnpj'] ?? 'Dado nao preenchido ' }}
+    <br>
+    Telefone {{ $indice['telefone'] ?? 'Dado nao preenchido ' }}
+    <br>
+@endforeach
 
 {{-- @switch ($fornecedor[0]['ddd'])
     @case('41')
