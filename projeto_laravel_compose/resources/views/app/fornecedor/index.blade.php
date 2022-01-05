@@ -24,23 +24,30 @@
 
 @endphp
 {{-- -ISSET VERIFICA A EXISTENCIA --}}
-@isset($fornecedor[1]['cnpj'])
+{{--  @isset($fornecedor[1]['cnpj'])
     <br>
-    Fornecedor = {{ $fornecedor[0]['nome'] }}
+    Fornecedor = {{ $fornecedor[1]['nome'] }}
     <br>
-    Status = {{ $fornecedor[0]['status'] }}
+    Status = {{ $fornecedor[1]['status'] }}
     <br>
-    {{-- -Verifica uma condição contraria a vinda da variavel --}}
+    CNPJ {{ $fornecedor[1]['cnpj'] ?? 'Dado nao preenchido '}}
+    {{--  -Verifica uma condição contraria a vinda da variavel
     @unless($fornecedor[0]['status'] == 'S')
         Fornecedor Inativo
         <br>
     @endunless
 
+    @endisset
+    --}}
 
-@endisset
+ <br>
+Fornecedor = {{ $fornecedor[1]['nome'] }}
 <br>
+Status = {{ $fornecedor[1]['status'] }}
+<br>
+CNPJ {{ $fornecedor[1]['cnpj'] ?? 'Dado nao preenchido '}}
 {{-- -- VARIAVEL VAZIA --}}
-@empty($fornecedor[1]['cnpj'])
+{{--  @empty($fornecedor[1]['cnpj'])
     vazia
-@endempty
+@endempty  --}}
 <br>
