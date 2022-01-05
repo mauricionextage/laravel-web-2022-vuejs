@@ -10,9 +10,15 @@ use Illuminate\Support\Facades\Route;
 //     return 'sobre nos';
 // });
 
-Route::get('/contato/{nome}/{idade?}', function (string $nome, string $idade="") {
-    return "OLA contato - $nome  - idade $idade";
-});
+Route::get(
+    '/contato/{nome}/{idade_id}',
+    function (
+        string $nome,
+        int $idade_id = 1
+    ) {
+        echo "OLA contato - $nome  - idade $idade_id";
+    }
+)->where('idade_id', '[0-9]+')->where('nome','[A-Za-z]+');
 
 Route::get('/', 'PrincipalController@principal');
 Route::get('/sobre', 'SobreNosController@sobreNos');
