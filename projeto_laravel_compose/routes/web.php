@@ -44,3 +44,9 @@ Route::prefix('/app')->group(function () {
 Route::get('/rota2', function () {
     return redirect()->route('site.index');
 })->name('site.rota2');
+
+//ROTA FALLBACK ROTA NAO EXISTENTE
+
+Route::fallback(function () {
+    echo 'A rota nao <a href="'.route('site.index').'"> existe</a>';
+});
