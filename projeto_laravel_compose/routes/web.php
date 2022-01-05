@@ -20,9 +20,9 @@ use Illuminate\Support\Facades\Route;
 //     }
 // )->where('idade_id', '[0-9]+')->where('nome','[A-Za-z]+');
 
-Route::get('/', 'PrincipalController@principal');
-Route::get('/sobre', 'SobreNosController@sobreNos');
-Route::get('/contato', 'ContatoController@contato');
+Route::get('/', 'PrincipalController@principal')->name('site.index');
+Route::get('/sobre', 'SobreNosController@sobreNos')->name('site.sobre');
+Route::get('/contato', 'ContatoController@contato')->name('site.contato');
 Route::get('/login', function () {
     return 'login';
 });
@@ -33,12 +33,12 @@ Route::prefix('/app')->group(function () {
 
     Route::get('/clientes', function () {
         return 'client';
-    });
+    })->name('app.clientes');
 
     Route::get('/fornecedores', function () {
         return 'fornecedores';
-    });
+    })->name('app.fornecedores');
     Route::get('/produtos', function () {
         return 'produtos';
-    });
+    })->name('app.produtos');
 });
