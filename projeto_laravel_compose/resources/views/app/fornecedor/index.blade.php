@@ -24,7 +24,7 @@
 
 @endphp
 {{-- -ISSET VERIFICA A EXISTENCIA --}}
-{{--  @isset($fornecedor[1]['cnpj'])
+{{-- @isset($fornecedor[1]['cnpj'])
     <br>
     Fornecedor = {{ $fornecedor[1]['nome'] }}
     <br>
@@ -37,17 +37,31 @@
         <br>
     @endunless
 
-    @endisset
-    --}}
+    @endisset --}}
 
- <br>
+<br>
 Fornecedor = {{ $fornecedor[1]['nome'] }}
 <br>
 Status = {{ $fornecedor[1]['status'] }}
 <br>
-CNPJ {{ $fornecedor[1]['cnpj'] ?? 'Dado nao preenchido '}}
+CNPJ {{ $fornecedor[1]['cnpj'] ?? 'Dado nao preenchido ' }}
+<br>
+Telefone {{ $fornecedor[1]['telefone'] ?? 'Dado nao preenchido ' }}
+<br>
+
+@switch ($fornecedor[0]['ddd'])
+    @case('41')
+        paraná
+    @break
+    @case('42')
+        Cascavel
+    @break
+    @case('42')
+        Londrina
+    @break
+@endswitch
 {{-- -- VARIAVEL VAZIA --}}
-{{--  @empty($fornecedor[1]['cnpj'])
+{{-- @empty($fornecedor[1]['cnpj'])
     vazia
-@endempty  --}}
+@endempty --}}
 <br>
