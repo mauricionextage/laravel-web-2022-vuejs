@@ -7,3 +7,6 @@ composer config -g github-protocols https ssh
 
 criar um projeto especifico 
 composer create-project --prefer-dist laravel/laravel:^7.0 blog
+
+na pasta public para iniciar o projeto com servidor do php embutido no laravel 
+php -S localhost:8000
