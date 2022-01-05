@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Route;
 //     return 'sobre nos';
 // });
 
-Route::get('/contato/o{nome}', function (string $nome) {
-    return 'OLA contato'.$nome;
+Route::get('/contato/{nome}/{idade?}', function (string $nome, string $idade="") {
+    return "OLA contato - $nome  - idade $idade";
 });
 
 Route::get('/', 'PrincipalController@principal');
