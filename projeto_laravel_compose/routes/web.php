@@ -23,19 +23,22 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PrincipalController@principal');
 Route::get('/sobre', 'SobreNosController@sobreNos');
 Route::get('/contato', 'ContatoController@contato');
-
 Route::get('/login', function () {
     return 'login';
 });
+//APP
+Route::prefix('/app')->group(function () {
 
-Route::get('/clientes', function () {
-    return 'client';
-});
 
-Route::get('/fornecedores', function () {
-    return 'fornecedores';
-});
 
-Route::get('/produtos', function () {
-    return 'produtos';
+    Route::get('/clientes', function () {
+        return 'client';
+    });
+
+    Route::get('/fornecedores', function () {
+        return 'fornecedores';
+    });
+    Route::get('/produtos', function () {
+        return 'produtos';
+    });
 });
