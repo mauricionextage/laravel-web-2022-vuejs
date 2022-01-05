@@ -23,16 +23,24 @@
 @php
 
 @endphp
-
-@isset($fornecedor[1]['cnpj'] )
-
+{{-- -ISSET VERIFICA A EXISTENCIA --}}
+@isset($fornecedor[1]['cnpj'])
+    <br>
     Fornecedor = {{ $fornecedor[0]['nome'] }}
-
+    <br>
     Status = {{ $fornecedor[0]['status'] }}
-
+    <br>
+    {{-- -Verifica uma condição contraria a vinda da variavel --}}
     @unless($fornecedor[0]['status'] == 'S')
         Fornecedor Inativo
+        <br>
     @endunless
 
 
 @endisset
+<br>
+{{-- -- VARIAVEL VAZIA --}}
+@empty($fornecedor[1]['cnpj'])
+    vazia
+@endempty
+<br>
